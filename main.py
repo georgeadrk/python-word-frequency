@@ -5,7 +5,7 @@ def get_frequency(text: str) -> list[tuple[str, int]]:
     lowered_text: str = text.lower()
     words: list[str] = re.findall(r'\b\w+\b', lowered_text)
     word_counts: Counter = Counter(words)
-    return word_counts.most_common()
+    return word_counts.most_common(n=10)
 
 def main() -> None:
     text: str = input('Enter your text: ').strip()
